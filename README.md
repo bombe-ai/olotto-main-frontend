@@ -1,4 +1,4 @@
-# Omillionaire Indian Site Client
+# Olotto 
 
 A modern, responsive React application for an online lottery platform built with TypeScript, Vite, and Bootstrap. The application provides a complete user experience for purchasing lottery tickets, managing user profiles, and handling authentication via OTP.
 
