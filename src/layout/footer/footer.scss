@@ -1,0 +1,132 @@
+.app-footer {
+  background-color: var(--dark-green);
+  color: var(--white);
+  padding: var(--fluid-space-s);
+  .container-fluid {
+    flex-wrap: unset;
+    gap: var(--fluid-space-s);
+
+    // Centering and max width for large screens
+    max-width: 120rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .branding {
+    &__logo {
+      img {
+        inline-size: auto;
+        block-size: 4em;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .middle-row {
+    .slogan {
+      font-size: var(--h1-font-size);
+      font-weight: 500;
+      margin-right: var(--fluid-space-s);
+      margin-bottom: var(--fluid-space-s);
+    }
+    .link-group {
+      gap: var(--fluid-space-s);
+
+      &-list {
+        font-size: 1em;
+        &__title {
+          font-size: 1em;
+          font-weight: 500;
+          margin-bottom: var(--fluid-space-3xs);
+        }
+        &__item {
+          cursor: pointer;
+          font-size: 0.975em;
+          font-weight: 400;
+          a {
+            text-decoration: none;
+            outline: none;
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        &__item--support {
+          font-size: 0.975em;
+          font-weight: 400;
+
+          a {
+            text-decoration: none;
+            outline: none;
+            transition: color 0.2s ease-in-out;
+            svg {
+              height: 1.975em;
+              width: auto;
+            }
+
+            &:hover {
+              color: var(--light-green);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-row {
+    gap: var(--fluid-space-s);
+    .disclaimer {
+      font-size: 0.75em;
+      font-weight: 400;
+    }
+
+    .badge-group {
+      picture {
+        img {
+          inline-size: auto;
+          block-size: 2.1em;
+          object-fit: contain;
+        }
+        &.upi-badge {
+          img {
+            block-size: 1.7em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 62rem) {
+  .app-footer {
+    .container-fluid {
+      gap: var(--fluid-space-m);
+    }
+
+    .middle-row {
+      .slogan {
+        margin-right: var(--fluid-space-m);
+        margin-bottom: 0;
+      }
+
+      .link-group {
+        gap: var(--fluid-space-m);
+      }
+    }
+  }
+}
+
+@media (min-width: 75rem) {
+  .app-footer {
+    .middle-row {
+      .slogan {
+        margin-right: var(--fluid-space-l);
+        margin-bottom: 0;
+      }
+
+      .link-group {
+        gap: var(--fluid-space-l);
+      }
+    }
+  }
+}

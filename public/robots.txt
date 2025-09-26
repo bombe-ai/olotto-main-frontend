@@ -1,0 +1,22 @@
+User-agent: *
+
+# Allow public pages
+Allow: /
+Allow: /register
+Allow: /login
+
+# Block private/internal pages
+Disallow: /profile/
+Disallow: /profile/*
+Disallow: /cart
+Disallow: /account
+Disallow: /dashboard
+Disallow: /admin/
+Disallow: /api/
+
+# Block development/testing subdomains
+User-agent: *
+Disallow: /*.cms.olotto.co
+
+# Sitemap location 
+Sitemap: https://olotto.co/sitemap.xml

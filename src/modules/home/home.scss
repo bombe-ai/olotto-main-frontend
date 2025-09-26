@@ -1,0 +1,92 @@
+.home-page {
+  gap: var(--fluid-space-s);
+  .hero-section {
+    .hero-banner {
+      width: 100%;
+      aspect-ratio: 1.2/1;
+      display: block;
+      overflow: hidden;
+      @media (min-width: 48rem) {
+        aspect-ratio: 2.6/1;
+      }
+      img {
+        inline-size: 100%;
+        block-size: 100%;
+        object-fit: cover;
+        object-position: bottom center;
+      }
+    }
+
+    .draw-timer {
+      z-index: 100;
+      bottom: -3em;
+      left: 50%;
+      translate: -50% 0;
+
+      h2 {
+        font-size: 0.675em;
+        font-weight: 600;
+        color: var(--white);
+
+        @media (min-width: 23rem) {
+          font-size: 1.125em;
+        }
+      }
+
+      .timer-box {
+        &__item {
+          width: 7em;
+          height: 6em;
+          border-radius: 1.5em;
+          background: radial-gradient(
+            234.89% 234.89% at 106.82% -9.55%,
+            #ffea6b 0%,
+            #ffdd0f 33.33%,
+            #b07300 66.67%,
+            #000 100%
+          );
+          box-shadow: -12px 12px 18.12px 0px rgba(255, 255, 255, 0.1) inset,
+            12px -12px 18.12px 0px rgba(0, 0, 0, 0.1) inset;
+          padding: 2em;
+
+          h3 {
+            font-size: calc(var(--h1-font-size) * 1.5);
+            font-weight: 700;
+            line-height: 1;
+          }
+
+          p {
+            font-size: 0.875em;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  .sub-header {
+    color: var(--dark-green);
+    text-align: center;
+    padding: var(--fluid-space-xl) var(--fluid-space-s) 0;
+    font-size: var(--h2-font-size);
+    font-weight: 600;
+    max-width: 75ch;
+    margin: 0 auto;
+
+    @media (min-width: 62rem) {
+      padding-top: var(--fluid-space-l);
+    }
+  }
+
+  .scratch-card-container {
+    padding: var(--fluid-space-s) 0 var(--fluid-space-l);
+
+    .container-fluid {
+      gap: var(--fluid-space-s);
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(clamp(16rem, 100%, 30rem), 1fr)
+      );
+    }
+  }
+}

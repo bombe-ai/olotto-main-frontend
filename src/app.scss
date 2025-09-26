@@ -1,0 +1,276 @@
+//Imports
+@import "bootstrap-variables";
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "react-phone-number-input/style.css";
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+// Variables
+:root {
+  --dark-green: #007a33;
+  --primary: linear-gradient(105deg, #01b513 0.6%, #017e32 96.74%);
+  --button-gradient: linear-gradient(90deg, #00b611 0%, #007a33 181.46%);
+  --green: #00b611;
+  --light-green: #acffb8;
+  --light-mud: #ffffac;
+  --dark-mud: #7d7d0a;
+  --blue: #006c9c;
+  --light-blue: rgba(0, 184, 217, 0.16);
+  --yellow: #ffdd0f;
+  --white: #ffffff;
+  --grey-1: #dcdcdc;
+  --grey-2: #f3f3f3;
+  --grey-3: #fafafa;
+  --grey-4: #f4f6f8;
+  --grey-5: rgba(153, 153, 153, 0.16);
+  --grey-6: #dbe7c8;
+  --background: #f8f8f8;
+  --text-primary: #313131;
+  --text-secondary: #535a53;
+  --text-tertiary: #707070;
+  --link-color: #0d3aff;
+  --image-placeholder-color: #ccc;
+  --border-color: #a6b6b8;
+  --form-invalid-color: #e92222;
+  --form-invalid-color-dark: #f00;
+  --form-invalid-color-light: rgba(244, 67, 54, 0.3);
+  //Font-styles
+  --h1-font-size: clamp(1.75rem, 1.5739rem + 0.7512vw, 2.25rem);
+  --h2-font-size: calc(var(--h1-font-size) * 0.67);
+  --p-font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+  --font-poppins: "Poppins", sans-serif;
+
+  /* Fluid Spacing */
+  --fluid-space-3xs: clamp(0.25rem, 0.162rem + 0.3756vw, 0.5rem);
+  --fluid-space-2xs: clamp(0.5rem, 0.3239rem + 0.7512vw, 1rem);
+  --fluid-space-xs: clamp(0.75rem, 0.4859rem + 1.1268vw, 1.5rem);
+  --fluid-space-s: clamp(1rem, 0.6479rem + 1.5023vw, 2rem);
+  --fluid-space-m: clamp(1.5rem, 0.9718rem + 2.2535vw, 3rem);
+  --fluid-space-l: clamp(2rem, 1.2958rem + 3.0047vw, 4rem);
+  --fluid-space-xl: clamp(3rem, 1.9437rem + 4.507vw, 6rem);
+  --fluid-space-2xl: clamp(4rem, 2.5915rem + 6.0094vw, 8rem);
+  --fluid-space-3xl: clamp(6rem, 3.8873rem + 9.0141vw, 12rem);
+
+  /* One-up pairs */
+  --fluid-space-3xs-2xs: clamp(0.25rem, -0.0141rem + 1.1268vw, 1rem);
+  --fluid-space-2xs-xs: clamp(0.5rem, 0.1479rem + 1.5023vw, 1.5rem);
+  --fluid-space-xs-s: clamp(0.75rem, 0.3099rem + 1.8779vw, 2rem);
+  --fluid-space-s-m: clamp(1rem, 0.2958rem + 3.0047vw, 3rem);
+  --fluid-space-m-l: clamp(1.5rem, 0.6197rem + 3.7559vw, 4rem);
+  --fluid-space-l-xl: clamp(2rem, 0.5915rem + 6.0094vw, 6rem);
+  --fluid-space-xl-2xl: clamp(3rem, 1.2394rem + 7.5117vw, 8rem);
+  --fluid-space-2xl-3xl: clamp(4rem, 1.1831rem + 12.0188vw, 12rem);
+
+  /* Custom pairs */
+  --fluid-space-s-l: clamp(1rem, -0.0563rem + 4.507vw, 4rem);
+  --fluid-space-reverse-1: clamp(0rem, 2.2rem - 2.44vw, 1.625rem);
+  --fluid-space-reverse-2: clamp(1rem, 2.3515625rem - 1.5vw, 2rem);
+
+  //Others
+  --box-shadow: 2px 4px 14.6px 0px rgba(0, 0, 0, 0.25);
+  --box-shadow-2: 1px 2px 5px 1px #e5e5e5;
+  --box-shadow-3: 0px 10px 60px 0px rgba(226, 236, 249, 0.5);
+  --box-shadow-card: 2px 4px 9px 0px rgba(0, 0, 0, 0.14);
+  --box-shadow-button: 0px 3px 6.2px 0px rgba(0, 0, 0, 0.07);
+  --box-shadow-button-inset: 0px 2px 2px 0px rgba(0, 0, 0, 0.1) inset;
+  --border: 1px solid #b0c3c6;
+}
+
+// Global styles
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-poppins);
+  font-size: var(--p-font-size);
+  line-height: 1.4;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+svg {
+  height: 2ex;
+  width: auto;
+  flex: none;
+}
+
+a {
+  color: currentcolor;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+:focus {
+  outline: 2px solid;
+  outline-offset: 0.3ch;
+}
+
+:target {
+  scroll-margin-top: 2ex;
+}
+
+main:focus {
+  outline: none;
+}
+
+html,
+body,
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--green) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 1.5em;
+  background: var(--green);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--green);
+}
+
+// Layouts
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    var(--grid-placement, auto-fill),
+    minmax(var(--grid-min-item-size, 16rem), 1fr)
+  );
+}
+
+// Utility classes
+.cta-btn,
+.tab-btn {
+  &,
+  &:hover,
+  &:active {
+    background-color: transparent;
+    color: inherit;
+    border-color: transparent;
+  }
+
+  &--primary {
+    background-color: var(--green);
+    color: var(--white);
+    border-color: var(--green);
+
+    &:hover,
+    &:active {
+      background-color: var(--dark-green) !important;
+      color: var(--white) !important;
+      border-color: var(--dark-green) !important;
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: var(--green);
+    border-color: var(--green);
+    &:hover,
+    &:active {
+      background-color: transparent !important;
+      color: var(--dark-green) !important;
+      border-color: var(--dark-green) !important;
+    }
+  }
+
+  &--tertiary {
+    border-color: var(--border-color);
+
+    &:hover {
+      border-color: var(--border-color);
+    }
+
+    &:active,
+    &.active {
+      background-color: var(--gip-green) !important;
+      color: var(--gip-white) !important;
+      border-color: var(--gip-green) !important;
+    }
+  }
+
+  &--danger {
+    background-color: var(--form-invalid-color);
+    color: var(--white);
+    border-color: var(--form-invalid-color);
+
+    &:hover,
+    &:active {
+      background-color: var(--form-invalid-color-dark) !important;
+      color: var(--white) !important;
+      border-color: var(--form-invalid-color-dark) !important;
+    }
+  }
+
+  &--text {
+    padding: 0;
+    border: none;
+    background-color: transparent !important;
+    line-height: 1;
+  }
+}
+
+//Block styles
+.main-container {
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.delete-account-modal,
+.signout-modal {
+  .modal-content {
+    border-radius: 1.5em;
+  }
+  .modal-body {
+    font-size: 1.125em;
+    font-weight: 600;
+  }
+
+  .cta-btn {
+    padding: 0.7em 2.5em;
+    border-radius: 1.5em;
+  }
+}
+
+//Animations
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

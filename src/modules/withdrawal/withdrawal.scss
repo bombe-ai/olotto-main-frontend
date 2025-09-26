@@ -1,0 +1,113 @@
+.withdrawal-page {
+  width: 100%;
+  height: 100%;
+
+  .page-wrapper {
+    z-index: 101;
+  }
+
+  .withdrawal {
+    &-content {
+      background-color: var(--white);
+      box-shadow: var(--box-shadow-card);
+    }
+
+    .text-small {
+      font-size: 0.75em;
+    }
+
+    &-form {
+      padding: var(--fluid-space-s);
+
+      &__title {
+        font-size: var(--h2-font-size);
+      }
+
+      h2 {
+        font-size: 1.15em;
+        font-weight: 600;
+      }
+
+      .submit-btn {
+        padding: 0.5em 2em;
+        font-size: 1em;
+        font-weight: 600;
+        border-radius: 1.5em;
+      }
+    }
+
+    input {
+      padding: 0.75em 0;
+    }
+
+    .form-label {
+      font-size: 0.875em;
+      font-weight: 600;
+    }
+
+    .form-control,
+    .phone-input,
+    .PhoneInputInput {
+      padding-left: 1em;
+      padding-right: 1em;
+      font-size: 1em;
+      background-color: var(--grey-2);
+      border: 1px solid transparent;
+      border-radius: 0.5em;
+      outline: none;
+      &:focus {
+        box-shadow: none;
+      }
+      &.is-invalid {
+        border-color: var(--form-invalid-color);
+      }
+    }
+  }
+}
+
+//768px
+@media (min-width: 48rem) {
+  .withdrawal-page {
+    padding: var(--fluid-space-s);
+
+    .page-bg {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 30rem;
+      overflow: hidden;
+      z-index: 100;
+      img {
+        inline-size: 100%;
+        block-size: auto;
+      }
+    }
+
+    .withdrawal {
+      margin-top: var(--fluid-space-xl);
+      &-content {
+        padding: var(--fluid-space-s);
+        border-radius: 1em;
+      }
+    }
+  }
+}
+
+.withdrawal-modal {
+  &-icon {
+    svg {
+      height: 6.5em;
+    }
+  }
+
+  h3 {
+    font-size: var(--h2-font-size);
+    font-weight: 700;
+  }
+  .modal-content {
+    border-radius: 1.5em;
+  }
+  .modal-btn {
+    text-decoration: underline;
+  }
+}

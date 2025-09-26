@@ -1,0 +1,112 @@
+.how-to-participate-page {
+  padding: var(--fluid-space-s-m);
+  background: var(--white);
+
+  @media (min-width: 62rem) {
+    padding: var(--fluid-space-l-xl);
+  }
+
+  .container-fluid {
+    max-width: 38rem;
+    margin: 0 auto;
+    gap: var(--fluid-space-l);
+  }
+
+  &-header {
+    h1 {
+      font-size: var(--h1-font-size);
+      font-weight: 500;
+      span {
+        color: var(--green);
+      }
+    }
+
+    p {
+      font-size: 1.25em;
+      font-weight: 400;
+      color: var(--text-tertiary);
+    }
+  }
+
+  &-content {
+    .step-card-container {
+      gap: var(--fluid-space-m);
+      position: relative;
+    }
+
+    .step-card-item {
+      gap: var(--fluid-space-m);
+      position: relative;
+
+      @media (min-width: 62rem) {
+        gap: var(--fluid-space-xl);
+      }
+
+      &:not(:last-child) .step-icon::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 95%; // Start right after the icon
+        width: 4px;
+        height: calc(
+          100% + var(--fluid-space-m) + 4em
+        ); // Full step item height + gap
+        background: linear-gradient(to bottom, var(--dark-green), var(--green));
+        z-index: 1;
+      }
+
+      .step-icon {
+        font-size: 1.5em;
+        color: var(--white);
+        background-color: var(--dark-green);
+        width: 2.5em;
+        height: 2.5em;
+
+        border-radius: 50%;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 2;
+
+        &--mobile {
+          font-size: 1em;
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      .step-details {
+        border: 1px solid var(--border-color);
+        border-radius: 1em;
+        padding: var(--fluid-space-s);
+        box-shadow: var(--box-shadow-card);
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.02);
+        }
+        .step-subtitle {
+          font-size: 1em;
+          font-weight: 600;
+          color: var(--dark-green);
+          @media (min-width: 62rem) {
+            margin-bottom: var(--fluid-space-xs);
+          }
+        }
+
+        .step-title {
+          font-size: var(--h2-font-size);
+          font-weight: 500;
+        }
+
+        .step-description {
+          font-size: 1em;
+          font-weight: 400;
+          color: var(--text-tertiary);
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}

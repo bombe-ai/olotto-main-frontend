@@ -1,0 +1,580 @@
+.user-profile-page {
+  width: 100%;
+  height: 100%;
+
+  .page-wrapper {
+    z-index: 101;
+  }
+
+  .user-profile {
+    &-sidebar,
+    &-content {
+      background-color: var(--white);
+      box-shadow: var(--box-shadow-card);
+    }
+
+    .text-small {
+      font-size: 0.75em;
+    }
+
+    input {
+      padding: 0.75em 0;
+    }
+
+    .form-label {
+      font-size: 0.875em;
+      font-weight: 600;
+    }
+
+    .form-control,
+    .phone-input,
+    .PhoneInputInput,
+    select {
+      padding-left: 1em;
+      padding-right: 1em;
+      font-size: 1em;
+      background-color: var(--grey-2);
+      border: 1px solid transparent;
+      border-radius: 0.5em;
+      outline: none;
+      &:focus {
+        box-shadow: none;
+      }
+      &.is-invalid {
+        border-color: var(--form-invalid-color);
+      }
+    }
+
+    .my-profile,
+    .my-tickets,
+    .winnings,
+    .transactions,
+    .help {
+      padding: var(--fluid-space-xs);
+      .title {
+        font-size: 1em;
+        font-weight: 600;
+      }
+      &-header {
+        .tab-btn {
+          font-size: 1.125em;
+          font-weight: 600em;
+          padding: 0.2em 0 0.2em;
+          border: none;
+          border-bottom: 3px solid transparent;
+          border-radius: unset;
+          outline: none;
+          transition: border 0.3s ease;
+
+          &:hover,
+          &:active,
+          &.active {
+            background-color: transparent;
+            color: inherit;
+          }
+
+          &:active,
+          &.active {
+            border-color: var(--green);
+          }
+        }
+      }
+    }
+
+    .my-profile {
+      form {
+        .fieldset-legend {
+          font-size: 1em;
+          font-weight: 600;
+        }
+        .submit-btn {
+          padding: 0.5em 1em;
+          border-radius: 1.2em;
+        }
+      }
+    }
+
+    .my-tickets {
+      .tickets-container {
+        --grid-min-item-size: clamp(16rem, 100%, 22rem);
+        gap: var(--fluid-space-s);
+
+        .ticket-card {
+          padding: var(--fluid-space-2xs);
+          background-color: var(--white);
+          border-radius: 1em;
+          box-shadow: var(--box-shadow-card);
+
+          .ticket-image-wrapper {
+            container-type: inline-size;
+            width: 100%;
+          }
+
+          .ticket-image {
+            .ticket-numbers {
+              &__item {
+                font-size: 0.5em;
+                border-width: 2px;
+                @media (min-width: 23rem) {
+                  font-size: 0.6em;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .load-more-section,
+      .show-less-section {
+        margin-top: var(--fluid-space-s);
+      }
+
+      .empty-state {
+        padding: var(--fluid-space-l);
+        color: var(--text-secondary);
+      }
+
+      .display-toggle-btn {
+        font-size: 0.875em;
+        padding: 0.5em 2em;
+      }
+    }
+
+    .winnings {
+      gap: var(--fluid-space-l);
+
+      .page-title {
+        font-size: 1.125em;
+        font-weight: 600;
+      }
+      &-amount-card {
+        box-shadow: var(--box-shadow-card);
+        padding: var(--fluid-space-xs);
+        max-width: 20em;
+        border-radius: 1em;
+
+        &-header {
+          p {
+            font-weight: 600;
+          }
+          svg {
+            height: 3ex;
+          }
+        }
+      }
+
+      &-card-container {
+        height: 70vh;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        padding: 0 var(--fluid-space-xs);
+      }
+
+      &-card {
+        padding: var(--fluid-space-xs);
+        background-color: var(--white);
+        border-radius: 1em;
+        box-shadow: var(--box-shadow-card);
+
+        h4 {
+          font-size: 1em;
+          font-weight: 600;
+        }
+
+        .ticket-details {
+          max-width: fit-content;
+          &__image {
+            width: clamp(16rem, 100%, 27rem);
+
+            .ticket-image {
+              .ticket-numbers {
+                &__item {
+                  font-size: 0.5em;
+                  border-width: 2px;
+                  @media (min-width: 23rem) {
+                    font-size: 0.6em;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .download-btn,
+        .withdraw-btn {
+          padding: 0.5em 2.5em;
+          border-radius: 1.5em;
+          font-size: 1em;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .transactions {
+      min-height: 60vh;
+
+      span {
+        display: inline-block;
+        font-size: 0.875em;
+        padding: 0.2em 1em;
+        border-radius: 1em;
+
+        &.success,
+        &.settled,
+        &.captured,
+        &.completed {
+          background-color: var(--light-green);
+          color: var(--dark-green);
+        }
+
+        &.failure,
+        &.cancelled,
+        &.failed {
+          background-color: var(--form-invalid-color-light);
+          color: var(--form-invalid-color);
+        }
+
+        &.pending,
+        &.initiated,
+        &.authorized {
+          background-color: var(--light-mud);
+          color: var(--dark-mud);
+        }
+      }
+
+      .transactions-list {
+        &__item {
+          h2 {
+            font-size: 0.875em;
+            font-weight: 600;
+          }
+          p {
+            text-align: left;
+            font-size: 0.875em;
+            color: var(--text-tertiary);
+          }
+        }
+      }
+    }
+
+    .help {
+      h1 {
+        font-size: 1.125em;
+        font-weight: 600;
+      }
+
+      textarea {
+        padding: var(--fluid-space-2xs);
+        font-size: 0.75em;
+      }
+
+      .submit-btn {
+        padding: 0.5em 5em;
+        margin: 0 auto;
+        border-radius: 1.5em;
+      }
+    }
+  }
+}
+
+//768px
+@media (min-width: 62rem) {
+  .user-profile-page {
+    padding: var(--fluid-space-s);
+
+    .page-bg {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 30rem;
+      overflow: hidden;
+      z-index: 100;
+      img {
+        inline-size: 100%;
+        block-size: auto;
+      }
+    }
+
+    .user-profile {
+      margin-top: var(--fluid-space-xl);
+      &-sidebar,
+      &-content {
+        padding: var(--fluid-space-s);
+        border-radius: 1em;
+      }
+
+      &-sidebar {
+        .user-info {
+          &__image {
+            width: 10em;
+            height: 10em;
+
+            img {
+              inline-size: 100%;
+              block-size: 100%;
+              object-fit: cover;
+              object-position: center;
+              border-radius: 50%;
+            }
+            .edit-btn {
+              bottom: 0.2em;
+              right: 0.2em;
+              color: var(--dark-green);
+              svg {
+                height: 2.2em;
+              }
+            }
+          }
+          h1 {
+            font-size: 1.125em;
+            font-weight: 600;
+          }
+        }
+
+        .user-profile-nav {
+          .profile-nav-btn {
+            padding: 0.7em 1.4em;
+            border-radius: 1.5em;
+            border: none;
+            text-decoration: none;
+            outline: none;
+            transition: background-color 0.2s ease-in-out,
+              color 0.2s ease-in-out;
+            svg {
+              height: 2.2ex;
+            }
+            &:active,
+            &.active {
+              background-color: var(--green);
+              color: var(--white);
+            }
+          }
+        }
+      }
+
+      .my-profile {
+        form {
+          .submit-btn {
+            padding: 0.5em 7em;
+          }
+        }
+      }
+
+      .transactions {
+        min-height: 60vh;
+
+        .transactions-table {
+          tr td,
+          tr th {
+            padding: 1em;
+          }
+
+          & > thead > tr > th {
+            background-color: var(--dark-green) !important;
+            color: var(--white) !important;
+            &:first-child {
+              border-top-left-radius: 1em;
+            }
+            &:last-child {
+              border-top-right-radius: 1em;
+            }
+          }
+
+          td {
+            font-size: 0.875em;
+            color: var(--text-tertiary);
+            span {
+              display: inline-block;
+              font-size: 0.875em;
+              padding: 0.2em 1em;
+              border-radius: 1em;
+
+              &.success,
+              &.settled,
+              &.captured,
+              &.completed {
+                background-color: var(--light-green);
+                color: var(--dark-green);
+              }
+
+              &.failure,
+              &.cancelled,
+              &.failed {
+                background-color: var(--form-invalid-color-light);
+                color: var(--form-invalid-color);
+              }
+
+              &.pending,
+              &.initiated,
+              &.authorized {
+                background-color: var(--light-mud);
+                color: var(--dark-mud);
+              }
+            }
+          }
+
+          // Styles for truncated text cells
+          .text-truncate-cell {
+            max-width: 150px;
+
+            .truncated-text {
+              cursor: pointer;
+              color: var(--primary);
+              text-decoration: none;
+              font-family: monospace;
+              font-size: 0.8em;
+              padding: 0.25em 0.5em;
+              border-radius: 0.25em;
+              background-color: rgba(0, 182, 17, 0.1);
+              transition: all 0.2s ease;
+              position: relative;
+              border: 1px solid rgba(0, 182, 17, 0.2);
+
+              &::after {
+                content: "📋";
+                font-size: 0.7em;
+                margin-left: 0.25em;
+                opacity: 0.7;
+              }
+
+              &:hover {
+                background-color: rgba(0, 182, 17, 0.2);
+                transform: translateY(-1px);
+                border-color: rgba(0, 182, 17, 0.4);
+
+                &::after {
+                  opacity: 1;
+                }
+              }
+
+              &:active {
+                transform: translateY(0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Intermediate breakpoint for medium screens (993px to 1470px)
+@media (min-width: 62rem) and (max-width: 91.875rem) {
+  .user-profile-page {
+    .container-fluid {
+      .transactions {
+        .transactions-table {
+          font-size: 0.75rem; // Smaller base font size
+
+          tr td,
+          tr th {
+            padding: 0.5em 0.3em; // Reduced padding
+            white-space: nowrap;
+          }
+
+          & > thead > tr > th {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.7em 0.3em;
+          }
+
+          // Adjust truncated text for medium screens
+          .text-truncate-cell {
+            max-width: 100px; // Smaller max width
+
+            .truncated-text {
+              font-size: 0.65em;
+              padding: 0.2em 0.4em;
+
+              &::after {
+                font-size: 0.6em;
+              }
+            }
+          }
+
+          // Make specific columns even more compact
+          td:nth-child(1), // Order ID
+          td:nth-child(2) {
+            // Gateway Ref
+            max-width: 80px;
+          }
+
+          td:nth-child(3) {
+            // Date and Time
+            font-size: 0.65rem;
+          }
+
+          td:nth-child(4), // Type
+          td:nth-child(5) {
+            // Method
+            max-width: 70px;
+            font-size: 0.65rem;
+          }
+
+          td:nth-child(6) {
+            // Amount
+            text-align: right;
+            font-size: 0.7rem;
+            font-weight: 600;
+          }
+
+          td:nth-child(7) {
+            // Status
+            span {
+              font-size: 0.65rem;
+              padding: 0.15em 0.6em;
+            }
+          }
+
+          td:nth-child(8) {
+            // Balance
+            text-align: right;
+            font-size: 0.65rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile truncated text styles - Applied to all screen sizes (outside media queries)
+.user-profile-page {
+  .transactions-list {
+    .mobile-truncate-cell {
+      .truncated-text-mobile {
+        cursor: pointer;
+        color: var(--primary);
+        text-decoration: none;
+        font-family: monospace;
+        font-size: 0.75em;
+        padding: 0.25em 0.5em;
+        border-radius: 0.25em;
+        background-color: rgba(0, 182, 17, 0.1);
+        transition: all 0.2s ease;
+        display: inline-block;
+        max-width: 120px;
+        word-break: break-all;
+        border: 1px solid rgba(0, 182, 17, 0.2);
+        position: relative;
+
+        &::after {
+          content: "📋";
+          font-size: 0.6em;
+          margin-left: 0.25em;
+          opacity: 0.7;
+        }
+
+        &:hover,
+        &:active {
+          background-color: rgba(0, 182, 17, 0.2);
+          transform: scale(1.02);
+          border-color: rgba(0, 182, 17, 0.4);
+
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.cart-ribbon {
+  padding: var(--fluid-space-xs) var(--fluid-space-s);
+  gap: var(--fluid-space-xl);
+  background-color: var(--white);
+  z-index: 2000;
+
+  .selected-lottery {
+    font-size: 1.25em;
+    svg,
+    .count {
+      color: var(--dark-green);
+    }
+  }
+
+  .total-amount {
+    p {
+      font-size: 0.875em;
+      font-weight: 600;
+    }
+
+    .amount {
+      font-size: 1.3em;
+      background: var(--primary);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  &-actions {
+    .cart-buy-btn,
+    .cart-remove-btn {
+      font-size: 1em;
+      border-radius: 1.5em;
+      padding: 0.5em 1.5em;
+      box-shadow: var(--box-shadow-button-inset);
+      transition: color 0.2s ease-in-out;
+    }
+
+    .cart-buy-btn {
+      border: 0.5px solid #ffeb70;
+      background: var(--yellow);
+    }
+
+    .cart-remove-btn {
+      border: 0.5px solid var(--grey-3);
+      background: var(--grey-3);
+    }
+  }
+}

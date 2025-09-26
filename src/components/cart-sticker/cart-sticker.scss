@@ -1,0 +1,120 @@
+.cart-sticker-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 1044;
+}
+
+.cart-sticker {
+  bottom: 8em;
+  left: 1em;
+  right: 1em;
+  height: auto;
+  min-height: 3.5em;
+  width: clamp(15rem, 90%, 17rem);
+  background: linear-gradient(102deg, #017e32 -11.29%, #01b513 118.7%);
+  padding: var(--fluid-space-2xs);
+  border-radius: 0.5em;
+  z-index: 1044;
+  pointer-events: auto;
+  position: relative;
+  overflow: hidden;
+
+  // Progress bar container
+  &__progress-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0.5em 0.5em 0 0;
+    overflow: hidden;
+  }
+
+  &__progress {
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0.9) 50%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    position: relative;
+
+    // Glossy shine effect
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        transparent 100%
+      );
+      animation: shine 2s infinite;
+    }
+  }
+
+  // Initial state - handled by Framer Motion
+  // transform: translateY(100px);
+  // opacity: 0;
+  // transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  // &--visible {
+  //   transform: translateY(0);
+  //   opacity: 1;
+  // }
+
+  .message {
+    color: var(--white);
+    font-size: 0.875em;
+    font-weight: 500;
+    flex: 1;
+    line-height: 1.3;
+    margin-top: 0.25em; // Account for progress bar
+  }
+
+  .view-cart-btn {
+    background: var(--white);
+    color: var(--green);
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 0.375em;
+    padding: 0.4em 0.8em;
+    border: none;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    margin-top: 0.25em; // Account for progress bar
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.9);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// Shine animation for glossy effect
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+// Responsive adjustments
+@media (min-width: 576px) {
+  .cart-sticker {
+    left: 2em;
+    width: clamp(18rem, 50%, 24rem);
+  }
+}

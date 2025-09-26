@@ -1,0 +1,37 @@
+.main-layout {
+  margin-top: 3.55rem;
+  padding-bottom: 3.9rem;
+
+  @media (min-width: 62rem) {
+    padding-bottom: 0;
+  }
+
+  .page-wrapper {
+    // Centering and max width for large screens
+    max-width: 120rem;
+    margin-left: auto;
+    margin-right: auto;
+    .whats-app-floaty {
+      right: 2em;
+      bottom: 5em;
+      z-index: 1043;
+      @media (min-width: 48rem) {
+        right: 2em;
+        bottom: 6em;
+      }
+      @media (min-width: 62rem) {
+        right: 3em;
+        bottom: 3em;
+      }
+      a {
+        text-decoration: none;
+        outline: none;
+      }
+      img {
+        height: 3.5rem;
+        width: auto;
+        object-fit: contain;
+      }
+    }
+  }
+}

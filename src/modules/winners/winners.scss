@@ -1,0 +1,147 @@
+.winners-page {
+  padding: var(--fluid-space-s-m);
+  background: var(--white);
+
+  @media (min-width: 62rem) {
+    padding: var(--fluid-space-l-xl);
+  }
+
+  .container-fluid {
+    gap: var(--fluid-space-l);
+  }
+
+  &-header {
+    h1 {
+      font-size: var(--h1-font-size);
+      font-weight: 500;
+      span {
+        color: var(--green);
+      }
+    }
+
+    p {
+      font-size: 1.25em;
+      font-weight: 400;
+      color: var(--text-tertiary);
+    }
+  }
+
+  &-content {
+    .winners-card-container {
+      gap: var(--fluid-space-xs);
+      --grid-min-item-size: clamp(16rem, 100%, 40rem);
+    }
+
+    .winners-card-item {
+      position: relative;
+      border: 1px solid var(--border-color);
+      border-radius: 1.5em;
+      padding: var(--fluid-space-xs);
+
+      &:first-child {
+        background: var(
+          --Gradient-1,
+          linear-gradient(90deg, #00b611 0%, #007a33 181.46%)
+        );
+
+        .prize-rank {
+          background: unset;
+          background-clip: unset;
+          -webkit-background-clip: unset;
+          color: var(--white);
+          -webkit-text-fill-color: var(--white);
+        }
+        .winner-details__name,
+        .winner-details__location {
+          color: var(--white);
+        }
+
+        .winner-comment {
+          .quote-icon {
+            color: var(--white);
+            opacity: 1;
+          }
+          p {
+            color: var(--white);
+          }
+        }
+      }
+
+      .confetti {
+        top: 0;
+        right: 0;
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-position: top right;
+          opacity: 0.8;
+        }
+      }
+
+      picture {
+        display: block;
+        height: 100%;
+        width: 100%;
+        img {
+          block-size: 100%;
+          inline-size: 100%;
+          object-fit: cover;
+          border-radius: 0.5em;
+        }
+      }
+
+      .prize-rank {
+        font-size: clamp(5rem, 4.0317rem + 4.1315vw, 7.75rem);
+        background: var(
+          --Gradient-1,
+          linear-gradient(90deg, #00b611 0%, #007a33 181.46%)
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        span {
+          font-size: 0.5em;
+        }
+      }
+
+      .winner-details {
+        flex-direction: column;
+        justify-content: space-between;
+        @media (min-width: 48rem) {
+          align-items: center;
+          flex-direction: row-reverse;
+        }
+
+        &__name {
+          font-size: var(--h2-font-size);
+          font-weight: 500;
+        }
+
+        &__location {
+          font-size: 0.875em;
+          color: var(--text-secondary);
+        }
+      }
+
+      .winner-comment {
+        padding: var(--fluid-space-s) var(--fluid-space-xs) 0;
+        margin-top: var(--fluid-space-s);
+
+        .quote-icon {
+          font-size: 1.5em;
+          color: var(--text-tertiary);
+          top: calc(-1 * var(--fluid-space-xs));
+          left: 0.5em;
+          opacity: 0.3;
+        }
+
+        p {
+          font-weight: 500;
+          line-height: 1.25rem;
+        }
+      }
+    }
+  }
+}
